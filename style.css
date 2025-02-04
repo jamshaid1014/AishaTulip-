@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://source.unsplash.com/random/1600x900');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+  }
+  
+  .container .sticker-container {
+    max-width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .container .sticker {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .container .btn {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .btn a {
+    text-decoration: none;
+    color: #111;
+    background: #fff;
+    padding: 1em 2em; /* changed from 10px 25px */
+    border-radius: 0.5em; /* changed from 8px */
+    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+  }
+  
+  .btn a#move-random {
+    background-color: #ffb6c1;
+    color: #fff;
+    box-shadow: 0.5rem 1rem 3rem hsl(350, 100%, 50%, 0.5);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btn a#move-random:hover {
+    transform: translate(5%, 5%) scale(1.1);
+  }
+  
+  .btn a.no-button {
+    background-color: #ffe6f2;
+    color: #ff5a7f;
+    box-shadow: 0.5rem 1rem 3rem hsl(350, 100%, 50%, 0.5);
+    padding: 1em 1.5em; /* changed from 10px 20px */
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    max-width: 5em; /* added */
+    max-height: 5em; /* added */
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    .container .sticker-container{
+      max-width: 150px;
+      height: 150px;
+    }
+  
+    .container .btn {
+      flex-direction: column;
+    }
+  
+    .btn a {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .btn a.no-button {
+      max-width: 3em; /* changed */
+      max-height: 3em; /* changed */
+    }
+  }
+
+
+  /* Footer Styling */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: none; /* No background */
+    box-shadow: none;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #000; /* Text color */
+}
+
+/* Social Icons Styling */
+.footer-content .icon {
+    width: 30px; /* Set fixed width */
+    height: 30px; /* Set fixed height */
+    margin: 0 5px; /* Spacing between icons */
+    vertical-align: middle; /* Align icons with text */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.footer-content .icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+}

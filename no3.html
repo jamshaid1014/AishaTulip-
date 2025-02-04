@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Her Out</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sticker-container">
+        <iframe src="https://giphy.com/embed/CT5Ye7uVJLFtu" width="480" height="163" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kitty-please-follow-me-CT5Ye7uVJLFtu">via GIPHY</a></p>
+      </div>
+      <h1>Man jao na! Kitna attitude dikhao gi 😭</h1>
+      <p>bht glt baat hai 😭</p>
+
+      <div class="btn">
+        <a href="yes.html">Yes</a>
+        <a href="#" id="move-random" class="no-button">No</a>
+      </div>
+    </div>
+    <div class="background-image"></div>
+
+    <script>
+      function moveRandomEl(elm) {
+        elm.style.position = "absolute";
+        elm.style.top = Math.floor(Math.random() * 90 + 5) + "%";
+        elm.style.left = Math.floor(Math.random() * 90 + 5) + "%";
+      }
+
+      const moveRandom = document.querySelector("#move-random");
+      moveRandomEl(moveRandom); // Move the "No" button to a random position on page load
+
+      moveRandom.addEventListener("mouseenter", function (e) {
+        moveRandomEl(e.target);
+      });
+
+      // Add a transition effect to the "No" button
+      const noButton = document.querySelector(".no-button");
+      noButton.style.transition = "transform 0.3s ease-in-out";
+
+      // Move the "No" button in a funny way when the mouse moves over it
+      noButton.addEventListener("mousemove", function (e) {
+        const x = e.pageX - this.offsetLeft;
+        const y = e.pageY - this.offsetTop;
+        const radius = 50;
+        const angle = Math.atan2(y - this.offsetHeight / 2, x - this.offsetWidth / 2);
+        const translateX = radius * Math.cos(angle);
+        const translateY = radius * Math.sin(angle);
+        this.style.transform = `translate(${translateX}px, ${translateY}px)`;
+      });
+
+      // Reset the "No" button to its original position when the mouse leaves it
+      noButton.addEventListener("mouseleave", function () {
+        this.style.transform = "none";
+      });
+    </script>
+    <link rel="stylesheet" href="styles.css">
+<div id="footer-container"></div>
+<script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer-container").innerHTML = data);
+</script>
+
+  </body>
+  
+</html>
